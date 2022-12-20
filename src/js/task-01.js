@@ -1,9 +1,16 @@
-const categoriesEl = document.querySelectorAll(".item")
+const categoriesEl = document.querySelectorAll(".item");
 const countCategories = `Number of categories: ${categoriesEl.length}`;
 
 console.log(countCategories);
 
 
-const itemHeader = categoriesEl.querySelectorAll;
+const itemEl = document.querySelector(".item");
+const itemHeader = itemEl.firstElementChild.textContent;
+const itemMessageEl = `Category: ${itemHeader}`;
+console.log(itemMessageEl);
 
-console.log(itemHeader);
+
+const itemList = itemEl.lastElementChild.children;
+const countItems = `Elements: ${itemList.length}`;
+
+console.log(countItems);
