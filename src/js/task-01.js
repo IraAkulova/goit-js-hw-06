@@ -3,14 +3,14 @@ const countCategories = `Number of categories: ${categoriesEl.length}`;
 
 console.log(countCategories);
 
+const categoryAndQuantityArray = [...categoriesEl].map(item => {
+    const itemHeader = item.firstElementChild.textContent;
+    const itemMessageEl = `Category: ${itemHeader}`;
 
-const itemEl = document.querySelector(".item");
-const itemHeader = itemEl.firstElementChild.textContent;
-const itemMessageEl = `Category: ${itemHeader}`;
-console.log(itemMessageEl);
+    const itemList = item.lastElementChild.children;
+    const countItems = `Elements: ${itemList.length}`;
 
-
-const itemList = itemEl.lastElementChild.children;
-const countItems = `Elements: ${itemList.length}`;
-
-console.log(countItems);
+    return `${itemMessageEl} ${countItems}`;
+})
+const categoryAndQuantity = categoryAndQuantityArray.join(" ");
+console.log(categoryAndQuantity);
